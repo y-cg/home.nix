@@ -4,5 +4,6 @@
     ./devenv.nix
     ./zsh.nix
     ./git.nix
+    ./starship.nix
   ];
 }
