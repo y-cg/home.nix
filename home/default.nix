@@ -5,5 +5,6 @@
     ./zsh.nix
     ./git.nix
     ./starship.nix
+    ./lazygit.nix
   ];
 }
