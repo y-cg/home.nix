@@ -1,0 +1,29 @@
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: build / ${{ matrix.runner }} / ${{ matrix.platform }}
+    runs-on: ${{ matrix.runner }}
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: ubuntu-latest
+            platform: x86
+          - runner: ubuntu-24.04-arm64
+            platform: arm
+
+    steps:
+      - uses: actions/checkout@v4.2.2
+      - uses: DeterminateSystems/determinate-nix-action@main
+      - name: Install nh
+        run: nix profile install nixpkgs#nh
+      - name: Build home configuration
+        run: nh home build . -c ycg@general-${{ matrix.platform }}
