@@ -9,17 +9,24 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    devenv = {
+      url = "github:cachix/devenv/v2.0.5";
+    };
   };
 
   outputs =
-    { nixpkgs, home-manager, ... }:
+    {
+      nixpkgs,
+      home-manager,
+      ...
+    }@inputs:
     let
       mkHome =
         { meta }:
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.${meta.platform};
           modules = [ ./home ];
-          extraSpecialArgs = { inherit meta; };
+          extraSpecialArgs = { inherit meta inputs; };
         };
       whoami = "ycg";
     in
