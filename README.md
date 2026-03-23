@@ -19,5 +19,5 @@ nix shell 'nixpkgs#nh'
 You can switch to the home configuration defined in this directory by running:
 
 ```sh
-nh home switch . -c <username>@<hostname>
+nh home switch . -c <username>@<hostname> --accept-flake-config
 ```
