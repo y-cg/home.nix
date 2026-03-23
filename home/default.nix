@@ -12,5 +12,6 @@
     ./atuin.nix
     ./bat.nix
     ./eza.nix
+    ./misc.nix
   ];
 }
