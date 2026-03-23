@@ -1,0 +1,6 @@
+{ ... }:
+{
+  imports = [
+    ./llm-agents.nix
+  ];
+}

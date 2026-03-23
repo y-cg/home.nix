@@ -39,6 +39,7 @@
       url = "github:y-cg/nvchad";
       flake = false;
     };
+    llm-agents.url = "github:numtide/llm-agents.nix";
   };
 
   outputs =
@@ -52,7 +53,10 @@
         { meta }:
         home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.${meta.platform};
-          modules = [ ./home ];
+          modules = [
+            ./home
+            ./overlays
+          ];
           extraSpecialArgs = { inherit meta inputs; };
         };
       whoami = "ycg";
