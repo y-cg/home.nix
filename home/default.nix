@@ -13,5 +13,6 @@
     ./bat.nix
     ./eza.nix
     ./misc.nix
+    ./tmux.nix
   ];
 }
