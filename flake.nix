@@ -25,14 +25,14 @@
     in
 
     {
-      homeConfigurations."${whoami}@general-x86" = mkHome {
+      homeConfigurations."${whoami}@x86" = mkHome {
         meta = {
           platform = "x86_64-linux";
           inherit whoami;
         };
       };
 
-      homeConfigurations."${whoami}@general-arm" = mkHome {
+      homeConfigurations."${whoami}@arm" = mkHome {
         meta = {
           platform = "aarch64-linux";
           inherit whoami;
