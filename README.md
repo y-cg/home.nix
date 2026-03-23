@@ -14,10 +14,21 @@ Flake support should be enabled by default. Then install [`nh`](https://github.c
 nix shell 'nixpkgs#nh'
 ```
 
+To make sure the nix pick up the cache:
+
+```sh
+# if you use DeterminateSystems installer
+echo 'trusted-users = root @wheel @sudo' | sudo tee -a /etc/nix/nix.custom.conf
+
+# make sure restart the nix-daemon
+sudo systemctl restart nix-daemon
+```
+
 ## Usage
 
 You can switch to the home configuration defined in this directory by running:
 
 ```sh
-nh home switch . -c <username>@<hostname> --accept-flake-config
+# in case that cache miss happens, you can set the negative ttl to 0 to avoid waiting for the cache to expire
+nh home switch . -c <username>@<hostname> --accept-flake-config -- --option narinfo-cache-negative-ttl 0
 ```
