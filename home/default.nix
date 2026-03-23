@@ -8,5 +8,6 @@
     ./lazygit.nix
     ./essential.nix
     ./nh.nix
+    ./atuin.nix
   ];
 }
