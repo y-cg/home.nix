@@ -14,5 +14,6 @@
     ./eza.nix
     ./misc.nix
     ./tmux.nix
+    ./nix-tools.nix
   ];
 }
