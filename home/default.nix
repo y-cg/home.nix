@@ -15,5 +15,6 @@
     ./misc.nix
     ./tmux.nix
     ./nix-tools.nix
+    ./agents.nix
   ];
 }
