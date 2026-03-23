@@ -27,6 +27,18 @@
     devenv = {
       url = "github:cachix/devenv/v2.0.6";
     };
+    neovim-nightly-overlay = {
+      url = "github:nix-community/neovim-nightly-overlay";
+    };
+    nix4nvchad = {
+      url = "github:nix-community/nix4nvchad";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nvchad-starter.follows = "nvchad-config";
+    };
+    nvchad-config = {
+      url = "github:y-cg/nvchad";
+      flake = false;
+    };
   };
 
   outputs =

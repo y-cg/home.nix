@@ -1,6 +1,7 @@
 {
   imports = [
     ./general.nix
+    ./nvchad.nix
     ./devenv.nix
     ./zsh.nix
     ./git.nix
