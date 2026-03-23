@@ -7,5 +7,6 @@
     ./starship.nix
     ./lazygit.nix
     ./essential.nix
+    ./nh.nix
   ];
 }
