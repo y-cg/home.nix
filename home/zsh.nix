@@ -6,7 +6,7 @@
     enableCompletion = true;
     syntaxHighlighting.enable = true;
 
-    aliases = {
+    shellAliases = {
       clean-generations = "nix-env --delete-generations old";
       gc = "nix-collect-garbage -d";
     };
