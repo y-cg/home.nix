@@ -6,6 +6,11 @@
     enableCompletion = true;
     syntaxHighlighting.enable = true;
 
+    aliases = {
+      clean-generations = "nix-env --delete-generations old";
+      gc = "nix-collect-garbage -d";
+    };
+
     plugins = [
       {
         name = "vi-mode";
