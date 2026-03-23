@@ -27,4 +27,4 @@ jobs:
       - name: Install nh
         run: nix profile install nixpkgs#nh
       - name: Build home configuration
-        run: nh home build . -c ycg@general-${{ matrix.platform }}
+        run: nh home build . -c ycg@${{ matrix.platform }}
