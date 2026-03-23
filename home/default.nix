@@ -9,5 +9,7 @@
     ./essential.nix
     ./nh.nix
     ./atuin.nix
+    ./bat.nix
+    ./eza.nix
   ];
 }
