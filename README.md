@@ -30,5 +30,6 @@ You can switch to the home configuration defined in this directory by running:
 
 ```sh
 # in case that cache miss happens, you can set the negative ttl to 0 to avoid waiting for the cache to expire
-nh home switch . -c <username>@<hostname> --accept-flake-config -- --option narinfo-cache-negative-ttl 0
+# `-b` is for enabling the backup extension, which will backup the existing file that are not managed by home-manager.
+nh home switch . -c <username>@<hostname> -b --accept-flake-config -- --option narinfo-cache-negative-ttl 0
 ```
