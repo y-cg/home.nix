@@ -17,5 +17,6 @@
     ./tmux.nix
     ./nix-tools.nix
     ./agents.nix
+    ./gdb.nix
   ];
 }
