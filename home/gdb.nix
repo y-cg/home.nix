@@ -4,10 +4,6 @@
     gdb
   ];
 
-  programs.zsh.shellAliases = {
-    gdb = "gdb -x ~/.gdbinit";
-  };
-
   home.file.".gdbinit".text = ''
     set auto-load safe-path /
     set disassembly-flavor intel
