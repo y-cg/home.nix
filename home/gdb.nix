@@ -9,9 +9,10 @@
   };
 
   home.file.".gdbinit".text = ''
+    set auto-load safe-path /
     set disassembly-flavor intel
     set confirm off
 
-    alias stack = x/20wx $rsp
+    alias st = x/20wx $rsp
   '';
 }
