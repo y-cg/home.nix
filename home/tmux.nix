@@ -25,6 +25,7 @@ in
         plugin = tmux-nord;
         extraConfig = "";
       }
+      pkgs.tmuxPlugins.jump
     ];
     extraConfig = ''
       # use login shell to make sure ~/.zshenv is being read
@@ -39,8 +40,6 @@ in
 
       # increase repeat timeout
       set -sg repeat-time 600
-
-      set -g default-terminal "screen-256color"
 
       # Vim-like keymapping
       setw -g mode-keys vi
@@ -71,8 +70,42 @@ in
       set -ga terminal-overrides ",xterm-256color:Tc"
       set -g default-terminal "xterm-256color"
 
+      # helpful keybindings for resizing panes
+      bind -r h resize-pane -L 1  # resize pane left by 1 cells
+      bind -r l resize-pane -R 1  # resize pane right by 1 cells
+      bind -r j resize-pane -D 1  # resize pane down by 1 cells
+      bind -r k resize-pane -U 1  # resize pane up by 1 cells
+
+      # swap pane with previous/next pane (default: < and >)
+      bind < swap-pane -U
+      bind > swap-pane -D
+
+      # swap window with previous/next window
+      bind H swap-window -t :-1
+      bind L swap-window -t :+1
+
       # use mouse in tmux
       set -g mouse on
+
+      # automatically rename pane to reflect current running command
+      set-window-option -g automatic-rename on
+
+      # enable focus events for terminal applications that respond to them
+      set -g focus-events on
+
+      # enable extended key support for modern terminals
+      set -g extended-keys on
+      set -g extended-keys-format csi-u
+
+      # increase scrollback buffer
+      set-option -g history-limit 100000
+
+      # enable hyperlinks in supported terminals
+      set -ga terminal-features "*:hyperlinks"
+
+      # leap.nvim liked keybinding
+      # use `s<char>` to jump in the copy mode
+      bind-key -T copy-mode-vi s run-shell "${pkgs.tmuxPlugins.jump}/share/tmux-plugins/jump/scripts/tmux-jump.sh"
     '';
   };
 }
