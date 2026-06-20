@@ -18,5 +18,7 @@
     ./nix-tools.nix
     ./agents.nix
     ./gdb.nix
+    ./text.nix
+    ./tv.nix
   ];
 }
