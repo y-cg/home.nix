@@ -103,6 +103,9 @@ in
       # enable hyperlinks in supported terminals
       set -ga terminal-features "*:hyperlinks"
 
+      # make sure S-Enter creates a new line
+      bind-key -n S-Enter send-keys Escape "[13;2u"
+
       # leap.nvim liked keybinding
       # use `s<char>` to jump in the copy mode
       bind-key -T copy-mode-vi s run-shell "${pkgs.tmuxPlugins.jump}/share/tmux-plugins/jump/scripts/tmux-jump.sh"
