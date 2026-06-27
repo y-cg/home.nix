@@ -21,7 +21,7 @@
 
   # https://devenv.sh/scripts/
   scripts.list-configurations.exec = ''
-    nix eval .#homeConfigurations --apply builtins.attrNames --json
+    nix eval .#homeConfigurations --apply builtins.attrNames --json --accept-flake-config
   '';
 
   scripts.switch.exec = ''
