@@ -25,7 +25,7 @@
   '';
 
   scripts.switch.exec = ''
-    list-configurations | jq -r '.[]' | fzf --bind 'enter:become(nh home switch . -c {})'
+    list-configurations | jq -r '.[]' | fzf --bind 'enter:become(nh home switch . -c {} --accept-flake-config)'
   '';
 
   # https://devenv.sh/git-hooks/
