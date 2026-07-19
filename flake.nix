@@ -27,8 +27,8 @@
     devenv = {
       url = "github:cachix/devenv/v2.1.2";
     };
-    neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
+    nixpkgs-nightly = {
+      url = "github:NixOS/nixpkgs/master";
     };
     nix4nvchad = {
       url = "github:nix-community/nix4nvchad";

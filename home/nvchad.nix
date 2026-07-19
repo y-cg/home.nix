@@ -7,7 +7,8 @@
     extraPackages = [ ];
     hm-activation = true;
     backup = false;
-    neovim = inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.default;
+    # neovim is now provided by the overlay in overlays/neovim.nix (from nixpkgs-master)
+    neovim = pkgs.neovim;
   };
 
 }
