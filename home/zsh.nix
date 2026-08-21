@@ -9,6 +9,7 @@
     shellAliases = {
       clean-generations = "nix-env --delete-generations old";
       gc = "nix-collect-garbage -d";
+      sudo = "sudo env \"PATH=$PATH\"";
     };
 
     plugins = [
