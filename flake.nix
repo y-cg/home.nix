@@ -24,9 +24,6 @@
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    devenv = {
-      url = "github:cachix/devenv/v2.1.2";
-    };
     nixpkgs-nightly = {
       url = "github:NixOS/nixpkgs/master";
     };

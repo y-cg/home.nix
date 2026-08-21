@@ -1,7 +1,7 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 {
   home.packages = with pkgs; [
-    inputs.devenv.packages.${stdenv.hostPlatform.system}.default
+    devenv
   ];
   programs.direnv.enable = true;
 }
