@@ -42,13 +42,22 @@
     let
       mkHome =
         { meta }:
-        home-manager.lib.homeManagerConfiguration {
+        let
           pkgs = nixpkgs.legacyPackages.${meta.platform};
+        in
+        home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
           modules = [
             ./home
             ./overlays
           ];
-          extraSpecialArgs = { inherit meta inputs; };
+          extraSpecialArgs = {
+            inherit meta inputs;
+            pkgsNightly = import inputs.nixpkgs-nightly {
+              system = pkgs.stdenv.hostPlatform.system;
+              config.allowUnfree = true;
+            };
+          };
         };
       whoami = "ycg";
     in
